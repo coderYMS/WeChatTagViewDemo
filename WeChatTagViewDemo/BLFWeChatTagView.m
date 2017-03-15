@@ -9,7 +9,7 @@
 #import "BLFWeChatTagView.h"
 
 static const CGFloat kBLFWeChatTagViewLabelTFSpacing = 10;
-static const NSInteger kBLFWeChatTagViewMaxLength = 5;
+static const NSInteger kBLFWeChatTagViewMaxLength = 8;
 
 //-***************************************************************************************
 
@@ -97,7 +97,7 @@ static const NSInteger kBLFWeChatTagViewMaxLength = 5;
 - (UITextField *)mainTF {
     if (nil == _mainTF) {
         _mainTF = [[DeletableTextField alloc] initWithFrame:CGRectMake(10, 10, 120, 20)];
-        _mainTF.placeholder = @"五个汉字以内";
+        _mainTF.placeholder = @"八个汉字以内";
         _mainTF.delegate = self;
         _mainTF.deleteDelegate = self;
     }
@@ -116,7 +116,7 @@ static const NSInteger kBLFWeChatTagViewMaxLength = 5;
         _tagStringArr = [NSMutableArray array];
     }
     for (NovelTagLabel *tagLab in self.tagLabelArr) {
-        [_tagStringArr addObject:tagLab.text];
+        [_tagStringArr addObject:[tagLab.text substringWithRange:NSMakeRange(2, tagLab.text.length - 4)]];
     }
     return _tagStringArr;
 }
@@ -162,10 +162,10 @@ static const NSInteger kBLFWeChatTagViewMaxLength = 5;
 #pragma mark ---- UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField.text.length > kBLFWeChatTagViewMaxLength) {
-        NSLog(@"buneng chaoguo 5 ge zi");
-        return NO;
-    }
+//    if (textField.text.length > kBLFWeChatTagViewMaxLength) {
+//        NSLog(@"buneng chaoguo 8 ge zi");
+//        return NO;
+//    }
     if (textField.text.length == 0) {
         NSLog(@"buneng 为空");
         return NO;
@@ -185,8 +185,8 @@ static const NSInteger kBLFWeChatTagViewMaxLength = 5;
         }
     }
 
-    if (textField.text.length > kBLFWeChatTagViewMaxLength) {
-        textField.text = [textField.text substringToIndex:kBLFWeChatTagViewMaxLength];
+    if (textField.text.length >= kBLFWeChatTagViewMaxLength) {
+        textField.text = [textField.text substringToIndex:kBLFWeChatTagViewMaxLength - 1];
         NSLog(@"chaoguo 5 ge zi");
     }
     return YES;
