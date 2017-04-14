@@ -14,6 +14,7 @@
 		18A14CA01E77F209001DF72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A14C9F1E77F209001DF72E /* Assets.xcassets */; };
 		18A14CA31E77F209001DF72E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A14CA11E77F209001DF72E /* LaunchScreen.storyboard */; };
 		18A14CAC1E77F282001DF72E /* BLFWeChatTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A14CAB1E77F282001DF72E /* BLFWeChatTagView.m */; };
+		C072F9AC1EA0B26C003993E4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C072F9AB1EA0B26C003993E4 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		18A14CA41E77F209001DF72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A14CAA1E77F282001DF72E /* BLFWeChatTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLFWeChatTagView.h; sourceTree = "<group>"; };
 		18A14CAB1E77F282001DF72E /* BLFWeChatTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFWeChatTagView.m; sourceTree = "<group>"; };
+		C072F9AA1EA0B26C003993E4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C072F9AB1EA0B26C003993E4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				18A14C9A1E77F209001DF72E /* ViewController.m */,
 				18A14CAA1E77F282001DF72E /* BLFWeChatTagView.h */,
 				18A14CAB1E77F282001DF72E /* BLFWeChatTagView.m */,
+				C072F9AA1EA0B26C003993E4 /* UIView+Extension.h */,
+				C072F9AB1EA0B26C003993E4 /* UIView+Extension.m */,
 				18A14C9C1E77F209001DF72E /* Main.storyboard */,
 				18A14C9F1E77F209001DF72E /* Assets.xcassets */,
 				18A14CA11E77F209001DF72E /* LaunchScreen.storyboard */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C072F9AC1EA0B26C003993E4 /* UIView+Extension.m in Sources */,
 				18A14CAC1E77F282001DF72E /* BLFWeChatTagView.m in Sources */,
 				18A14C9B1E77F209001DF72E /* ViewController.m in Sources */,
 				18A14C981E77F209001DF72E /* AppDelegate.m in Sources */,
@@ -315,6 +321,7 @@
 				18A14CA91E77F209001DF72E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
