@@ -11,6 +11,7 @@
 
 static const CGFloat kBLFWeChatTagViewLabelTFSpacing = 10;
 static const CGFloat kBLFWeChatTagViewLabelTFMargin = 15;
+static const CGFloat kBLFWeChatTagViewLabelTFFont = 14;
 static const CGFloat kBLFWeChatTagViewTFHeight = 30;
 
 //-***************************************************************************************
@@ -35,7 +36,7 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
     label.layer.borderWidth = 0.5;
     label.text = [NSString stringWithFormat:@"  %@  ",content];
     label.textColor = [UIColor orangeColor];
-    label.font = [UIFont systemFontOfSize:14];
+    label.font = [UIFont systemFontOfSize:kBLFWeChatTagViewLabelTFFont];
     [label sizeToFit];
     label.height = CGRectGetHeight(frame);
     return label;
@@ -116,6 +117,10 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
 
 - (void)dismissTFKeyboard {
     [_mainTF resignFirstResponder];
+}
+
+- (BOOL)forceNext {
+    return [self textFieldShouldReturn:self.mainTF];
 }
 
 #pragma mark ---- local method
@@ -206,7 +211,7 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
 
 - (CGFloat)caculateStringLength:(NSString *)str {
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
-    lab.font = [UIFont systemFontOfSize:14];
+    lab.font = [UIFont systemFontOfSize:kBLFWeChatTagViewLabelTFFont];
     lab.text = str;
     [lab  sizeToFit];
     CGFloat resultWidth = lab.width + 20 + 10;//20是给光标留的空白，10是前面的leftview
@@ -314,7 +319,7 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
         _mainTF.placeholder = @"八个汉字以内";
         _mainTF.delegate = self;
         _mainTF.deleteDelegate = self;
-        _mainTF.font = [UIFont systemFontOfSize:14];
+        _mainTF.font = [UIFont systemFontOfSize:kBLFWeChatTagViewLabelTFFont];
         _mainTF.textColor = [UIColor blackColor];
         _mainTF.returnKeyType = UIReturnKeyDone;
         [_mainTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];

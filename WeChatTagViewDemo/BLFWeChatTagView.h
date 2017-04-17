@@ -27,5 +27,6 @@
 
 - (void)createInitialTags:(NSArray<NSString *> *)tagStrings;
 - (void)dismissTFKeyboard;
+- (BOOL)forceNext;//用户没点键盘的return，而是直接操作下一步之类的按钮，可以调用这个来结束输入并生成标签
 
 @end
