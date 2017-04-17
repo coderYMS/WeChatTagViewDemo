@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor cyanColor];
     
-    BLFWeChatTagView *tagView = [[BLFWeChatTagView alloc] initWithFrame:CGRectMake(10, 140, 300, 40)];
+    BLFWeChatTagView *tagView = [[BLFWeChatTagView alloc] initWithFrame:CGRectMake(10, 140, 300, 60)];
     tagView.backgroundColor = [UIColor whiteColor];
     tagView.delegate = self;
     [self.view addSubview:tagView];

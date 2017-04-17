@@ -226,7 +226,7 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     //为了适配sb的搜狗输入法
-    if (![textField.text isEqualToString:@""] && ![string isEqualToString:@""]) {
+    if ([textField.text isEqualToString:@""] && [string isEqualToString:@""]) {
         return YES;
     }
     
@@ -318,7 +318,8 @@ static const CGFloat kBLFWeChatTagViewTFHeight = 30;
         _mainTF.textColor = [UIColor blackColor];
         _mainTF.returnKeyType = UIReturnKeyDone;
         [_mainTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-        
+        _mainTF.adjustsFontSizeToFitWidth = YES;
+
         //textfield不顶到左边
         UIView *marginView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, kBLFWeChatTagViewTFHeight)];
         marginView.backgroundColor = [UIColor clearColor];
